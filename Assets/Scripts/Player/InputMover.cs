@@ -28,7 +28,7 @@ public class InputMover : MonoBehaviour
     private void OnDisable()
     {
         if (moveAction != null)
-        
+
             moveAction.Disable();
     }
 

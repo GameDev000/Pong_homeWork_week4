@@ -21,7 +21,7 @@ public class MagnetArtibute : MonoBehaviour
 
         if (distance > magnetRadius)
         {
-            return; 
+            return;
         }
         dir /= distance;
         float strengthFactor = 1f - Mathf.Clamp01(distance / magnetRadius);

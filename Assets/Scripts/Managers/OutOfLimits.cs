@@ -13,11 +13,13 @@ public class OutOfLimits : MonoBehaviour
     [SerializeField] private Gates bottomR;
     [SerializeField] private Gates bottomL;
 
-    private void OnTriggerEnter2D(Collider2D other){
+    private void OnTriggerEnter2D(Collider2D other)
+    {
         if (!other.CompareTag("Disk"))
             return;
 
-        switch (disk.LastPlayerHit){
+        switch (disk.LastPlayerHit)
+        {
             case MoveDisk.PlayerSide.Left:
                 gameManager.UpdateScoreLeft();
                 break;
@@ -32,13 +34,14 @@ public class OutOfLimits : MonoBehaviour
         CloseGatesAndResetDisk();
     }
 
-    private void CloseGatesAndResetDisk(){
+    private void CloseGatesAndResetDisk()
+    {
         topR.CloseGate();
         topL.CloseGate();
         bottomR.CloseGate();
-        bottomL.CloseGate();    
+        bottomL.CloseGate();
         disk.Reset();
         disk.FirstMove();
     }
-    
+
 }
